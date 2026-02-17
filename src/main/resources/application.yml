@@ -1,0 +1,41 @@
+# default port
+server:
+  port: 9090
+spring:
+  # keycloak
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            jwk-set-uri: http://localhost:8080/realms/springboot/protocol/openid-connect/certs
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/springboot
+  # project
+  application:
+    name: spring-boot-restful-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/employee_db001
+    username: postgres
+    password: 123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+# key cloak info
+keycloak:
+    server-url: http://localhost:8080
+    main-realm: springboot
+    client-id: spring-boot
+    client-secret: RYlJT42zRcfxkJfxrMdcYf3gBJGpaYuI
+
+# swagger ui for API test
+springdoc:
+  swagger-ui:
+    path: /api-docs
+    enabled: true
+  api-docs:
+    path: /api-docs/json
+
