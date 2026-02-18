@@ -5,7 +5,6 @@ import com.ekvitou.employee_management.model.dto.UpdateUserDto;
 import com.ekvitou.employee_management.model.dto.UserResponseDto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import java.util.Optional;
 
 public interface UserService {
     UserResponseDto createUser(CreateUserDto createUserDto);
